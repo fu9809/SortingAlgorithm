@@ -29,8 +29,8 @@ public class Quick_median {
 
     // 左右指针法
     public static int quickSortPart(int[] arr, int left, int right){
-        int key = right;        // 存储数组的下标
         int temp = arr[right];
+        int r = right;
         while(left < right){
             while(left < right && arr[left] <= temp){
                 left++;
@@ -38,16 +38,16 @@ public class Quick_median {
             while(left < right && arr[right] >= temp){
                 right--;
             }
-            swap(arr, left, right);
+            // 交换两个位置的值
+            if(left < right){
+                arr[left] = arr[left] ^ arr[right];
+                arr[right] = arr[left] ^ arr[right];
+                arr[left] = arr[left] ^ arr[right];
+            }
         }
-        swap(arr, left, key);
+        arr[r] = arr[left];
+        arr[left] = temp;
         return right;
-    }
-
-    public static void swap(int[] arr, int i, int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 }
 
