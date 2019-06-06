@@ -1,3 +1,4 @@
+// 挖坑法
 public class Quick_Classical {
     public static void main(String[] args) {
         int[] arr = new int[]{6, 9, 28, 13, 31, 26, 1, 16, 7, 22, 49, 46, 45, 46};
